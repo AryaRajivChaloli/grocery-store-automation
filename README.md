@@ -1,2 +1,2 @@
-# grocery-store-automation
+# Grocery Store Automation
 Grocery Store Automation
