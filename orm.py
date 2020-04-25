@@ -17,6 +17,3 @@ class buyer(db.Model):
 db.create_all()
 #creates the tables
 
-
-if __name__ == '__main__':
-    app.run(debug=True)
