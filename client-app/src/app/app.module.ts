@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputBoxComponent } from './input-box/input-box.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,6 +15,8 @@ import { InputBoxComponent } from './input-box/input-box.component';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
