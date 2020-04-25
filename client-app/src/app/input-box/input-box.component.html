@@ -1,8 +1,0 @@
-<div>
-    <form (ngSubmit)="sendName(postForm.value)" [formGroup]="postForm">
-        <label for="uid">Name: </label>
-        <input type="text" formControlName="uid" id="uid">
-        &nbsp;<input type="submit" [disabled]="!postForm.valid" value="Submit">
-    </form>
-    <p>{{posts['message']}}</p>
-</div>
