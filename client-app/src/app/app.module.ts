@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InputBoxComponent } from './input-box/input-box.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputBoxComponent
   ],
   imports: [
     BrowserModule,
