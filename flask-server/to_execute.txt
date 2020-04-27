@@ -1,0 +1,2 @@
+export FLASK_APP=execute.py
+flask run
