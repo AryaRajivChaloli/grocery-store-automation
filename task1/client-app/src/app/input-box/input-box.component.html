@@ -1,0 +1,10 @@
+<div>
+    <form (ngSubmit)="sendName(postForm.value)" [formGroup]="postForm">
+        <label for="name">Name: </label>
+        <input type="text" formControlName="name" id="name">
+        &nbsp;<input type="submit" [disabled]="!postForm.valid" value="Submit">
+    </form>
+    <p *ngFor="let post of posts">
+        <b>Congratulations {{post}}!!!</b>
+    </p>
+</div>
