@@ -12,8 +12,11 @@ db=SQLAlchemy(app)
 
 class buyer(db.Model):
     buyer_name=db.Column(db.String(80),primary_key=True)
-    def __init__(self,buyer_name):
-        self.buyer_name=buyer_name
+    buyer_id=db.Column(db.String(10),primary_key=True)	#to be generated randomly
+	buyer_email=db.Column(db.String(40),nullable=False)
+	#preprocessing to be done before accepting the phone number
+	buyer_number=db.Column(db.String(10),nullable=False)
+	buyer_pwd=db.Column(db.String(20),nullable=False)
 
 class seller(db.Model):
 	__tablename__="seller"
