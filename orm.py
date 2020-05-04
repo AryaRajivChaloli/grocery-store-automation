@@ -61,6 +61,36 @@ db.create_all()
 #seller1.products gives the list or products the seller has entered using the relation specified
 
 #given product id return all details
+@app.route('/api/store/create_user',methods=['POST'])
+def store_create_user():
+	seller_data = seller(
+		sname = request.form.get("seller_name")    #####PLEASE CHANGE THE INPUT NAME VALUES ACCORDING TO THE CLIENT SIDE FORM#######
+		#sid = request.form.get("seller_id")
+		seller_email = request.form.get("seller_email")
+		seller_number = request.form.get("seller_number")
+		seller_pwd = request.form.get("seller_password")
+	)
+	try:
+		
+		db.session.add(seller_data)
+		db.session.commit()
+		status = "success" #can modify if necessary
+
+	except:
+		status = "seller exists"
+	
+	return jsonify(status)
+@app.route('/api/store/login', methods=['POST'])
+def login_validation():
+    json_data = request.json
+    seller = seller.query.filter_by(email=json_data['seller_email']).first()
+    if seller and bcrypt.check_password_hash(
+            seller.seller_pwd, json_data['seller_password']):
+        session['logged_in'] = True
+        status = 1
+    else:
+        status = 0
+    return jsonify({'result': status})
 @app.route('/api/product/product_home',methods=['POST'])
 def seller_create_user():
     prod_id = request.json['product_id']
