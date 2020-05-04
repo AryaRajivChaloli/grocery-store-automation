@@ -41,14 +41,20 @@ class product(db.Model):
 seller.products = relationship("product", order_by = product.product_id, backref = "seller")
 
 class inventory(db.Model):
-	__tablename__="inventory"
-	sl_no=db.Column(db.Integer,primary_key=True)		#to be generated sequentially
-	prod_id=db.Column(db.String(10),db.ForeignKey("product.product_id"),nullable=False)
-	quantity=db.Column(db.Integer,nullable=False)
-	cost=db.Column(db.Integer(10,2),nullable=False)		#quantity*product_cost
-	expiry=db.Column(db.Date,nullable=False)
-	prod_relationship=relationship("product",backref = "inventory")
+    __tablename__="inventory"
+    sl_no=db.Column(db.Integer,primary_key=True)		#to be generated sequentially
+    prod_id=db.Column(db.String(10),db.ForeignKey("product.product_id"),nullable=False)
+    quantity=db.Column(db.Integer,nullable=False)
+    cost=db.Column(db.Integer,nullable=False)		#quantity*product_cost
+    expiry=db.Column(db.String,nullable=False)
+    prod_relationship=relationship("product",backref = "inventory")
 
+    def __init__(self, sl_no, prod_id,quantity,cost,expiry):
+        self.sl_no = sl_no
+        self.prod_id = prod_id
+        self.quantity=quantity
+        self.cost=cost
+        self.expiry=expiry
 db.create_all()
 #creates the tables
 #seller1=seller.query.first()
