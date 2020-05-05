@@ -87,10 +87,24 @@ def login_validation():
     if seller and bcrypt.check_password_hash(
             seller.seller_pwd, json_data['seller_password']):
         session['logged_in'] = True
-        status = 1
+        status = True
     else:
-        status = 0
+        status = False
     return jsonify({'result': status})
+@app.route('/api/store/product_details',methods = ['POST'])
+def link_seller_product():
+	produt_data = product(
+		pname = request.form.get("product_name")
+		pcost = request.form.get("product_cost")
+		rby = request.form.get("return_by")
+		pseller = request.form.get("seller_id"))
+	try:
+		db.session.add(product_data)
+		db.session.commit()
+		status="product details updated"
+	except:
+		status = "try again"
+	return jsonify(data = status)
 
 
 #given product id return all details
