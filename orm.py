@@ -60,7 +60,6 @@ db.create_all()
 #seller1=seller.query.first()
 #seller1.products gives the list or products the seller has entered using the relation specified
 
-#given product id return all details
 @app.route('/api/store/create_user',methods=['POST'])
 def store_create_user():
 	seller_data = seller(
@@ -80,6 +79,7 @@ def store_create_user():
 		status = "seller exists"
 	
 	return jsonify(status)
+
 @app.route('/api/store/login', methods=['POST'])
 def login_validation():
     json_data = request.json
@@ -91,6 +91,9 @@ def login_validation():
     else:
         status = 0
     return jsonify({'result': status})
+
+
+#given product id return all details
 @app.route('/api/product/product_home',methods=['POST'])
 def seller_create_user():
     prod_id = request.json['product_id']
