@@ -1,0 +1,22 @@
+<div>
+    <b>Enter product details here</b><br><br> <br>
+    <form *ngIf="!busy" (ngSubmit)="addProduct(postForm.value)" [formGroup]="postForm">
+        <div class="form-group">
+            <label for="pid">Product ID</label><br>
+            <input type="text" class="form-control" id="pid" formControlName="pid">
+        
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="name">Name</label><br>
+            <input type="text" class="form-control" id="name" formControlName="name">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="desc">Description</label><br>
+            <input type="text" class="form-control" id="desc" formControlName="desc">
+        </div>
+        <br>
+        <button type="submit" [disabled]="!postForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

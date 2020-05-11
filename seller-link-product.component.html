@@ -1,0 +1,26 @@
+<div>
+    <b>Link Product</b><br><br> <br>
+    <form *ngIf="!busy" (ngSubmit)="linkProduct(postForm.value)" [formGroup]="postForm">
+        <div class="form-group">
+            <label for="pid">Product ID</label><br>
+            <input type="text" class="form-control" id="pid" formControlName="pid">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="cost">Cost</label><br>
+            <input type="text" class="form-control" id="cost" formControlName="cost">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="exp">Expiry</label><br>
+            <input type="date" class="form-control" id="exp" formControlName="exp">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="ret">No of Return Days</label><br>
+            <input type="number" class="form-control" id="ret" formControlName="ret">
+        </div>
+        <br>
+        <button type="submit" [disabled]="!postForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div> 

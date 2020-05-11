@@ -1,0 +1,19 @@
+<div>
+    <h3>{{sname}}</h3>
+    <table style="width:100%; border: 1px solid black; border-collapse: collapse; text-align: center;">
+        <tr>
+            <th>Product Name</th>
+            <th>Cost</th>
+            <th>Expiry</th>
+            <th>Return within</th>
+            <th>Quantity</th>
+        </tr>
+        <tr class="post" *ngFor="let post of posts">
+                <td>{{post[1]}}</td>
+                <td>{{post[2]}}</td>
+                <td>{{post[3]}}</td>
+                <td>{{post[4]}}</td>
+                <td>{{post[5]}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,17 @@
+<div>
+    <div class="row">
+        <a href="/addproduct">Add Product</a>
+        <br>
+        <br>
+    </div>
+    <table style="width:100%; border: 1px solid black; border-collapse: collapse; text-align: center;">
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+        </tr>
+        <tr class="post" *ngFor="let post of posts">
+            <td>{{post[0]}}</td>
+            <td><a href="{{post[2]}}">{{post[1]}}</a></td>
+        </tr>
+    </table>
+</div>

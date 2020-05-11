@@ -1,0 +1,11 @@
+<div>
+    <b>Change Quantity</b><br><br> <br>
+    <form *ngIf="!busy" (ngSubmit)="updInv(postForm.value)" [formGroup]="postForm">
+        <div class="form-group">
+            <label for="quant">No. of items added <br>(negative for items removed)<br></label><br>
+            <input type="number" class="form-control" id="quant" formControlName="quant">
+        </div>
+        <br>
+        <button type="submit" [disabled]="!postForm.valid" class="btn btn-primary">Submit</button>
+    </form>
+</div>

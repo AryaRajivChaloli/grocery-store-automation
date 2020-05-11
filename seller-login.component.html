@@ -1,0 +1,19 @@
+<div>
+    <b>SELLER LOGIN</b><br><br> <br>
+    <form *ngIf="!busy" (ngSubmit)="loginSeller(postForm.value)" [formGroup]="postForm">
+        <div class="form-group">
+            <label for="sid">Seller ID</label><br>
+            <input type="text" class="form-control" id="sid" formControlName="sid">
+        
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="pwd">Password</label><br>
+            <input type="password" class="form-control" id="pwd" formControlName="pwd">
+        </div>
+        <br>
+        <button type="submit" [disabled]="!postForm.valid" class="btn btn-primary">Submit</button>
+        <br><br>
+        <a href="/sellersignup">Sign-Up</a>
+    </form>
+</div>

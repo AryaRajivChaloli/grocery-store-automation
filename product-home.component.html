@@ -1,0 +1,26 @@
+<div>
+    <div>
+        Name : {{posts[0]}}
+        <br>
+        Description : {{posts[1]}}
+        <br>
+    </div>
+    <br>
+    <br>
+    <table style="width:100%; border: 1px solid black; border-collapse: collapse; text-align: center;">
+        <tr>
+            <th>Store Name</th>
+            <th>Cost</th>
+            <th>Expiry</th>
+            <th>Return within</th>
+            <th>Quantity</th>
+        </tr>
+        <tr class="post" *ngFor="let post of sellers">
+            <td><a href={{post[5]}}>{{post[0]}}</a></td>
+            <td>{{post[1]}}</td>
+            <td>{{post[2]}}</td>
+            <td>{{post[3]}}</td>
+            <td>{{post[4]}}</td>
+        </tr>
+    </table>
+</div>
